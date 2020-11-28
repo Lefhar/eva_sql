@@ -31,4 +31,5 @@ SELECT MONTH(OrderDate) AS `Mois 97`, sum(UnitPrice * Quantity) AS 'Montant Vent
 SELECT OrderDate AS 'Date de dernière commande' FROM `order details` JOIN orders ON orders.OrderID = `order details`.OrderID JOIN customers ON customers.CustomerID = orders.CustomerID AND CompanyName ="Du monde entier"  ORDER BY OrderDate DESC LIMIT 1
 
 -- 10 – Quel est le délai moyen de livraison en jours ?
+select round(AVG(DATEDIFF(ShippedDate, OrderDate))) AS 'Délai moyen de livraison en jours' from orders
  
