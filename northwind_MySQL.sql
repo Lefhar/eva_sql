@@ -80,6 +80,7 @@ CREATE TABLE `order details` (
   PRIMARY KEY (`OrderID`,`ProductID`),
   FOREIGN KEY (`OrderID`) REFERENCES `orders` (`OrderID`),
   FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`)
+      CONSTRAINT Commande_products_FK FOREIGN KEY (ProductID) REFERENCES products(ProductID)
 ) ;
 
 
